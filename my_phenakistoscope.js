@@ -1,4 +1,4 @@
-const SLICE_COUNT = 10;
+const SLICE_COUNT =10;
 
 function setup_pScope(pScope){
   pScope.output_mode(ANIMATED_DISK);
@@ -6,6 +6,8 @@ function setup_pScope(pScope){
   pScope.draw_layer_boundaries(true);
   pScope.set_direction(CCW);
   pScope.set_slice_count(SLICE_COUNT);
+  pScope.load_image_("two_face","png");
+
 }
 
 function setup_layers(pScope){
@@ -19,6 +21,10 @@ function setup_layers(pScope){
   var layer2 = new PLayer(squares);
   layer2.mode( RING );
   layer2.set_boundary( 0, 400 );
+
+  var CenterImage = new Player(twofaces);
+  CenterUmage.mode(RING);
+  CenterImage.set_boundary(0,30);
 }
 
 function faces(x, y, animation, pScope){
@@ -34,6 +40,7 @@ function faces(x, y, animation, pScope){
 }
 
 function squares(x, y, animation, pScope){
+scale(2)
 
   // this is how you set up a background for a specific layer
   let angleOffset = (360 / SLICE_COUNT) / 2
@@ -41,7 +48,7 @@ function squares(x, y, animation, pScope){
   let backgroundArcEnd = 270 + angleOffset;
 
   fill(66, 135, 245)
-  arc(x,y,800,800,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
+  arc(x,y,400,400,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
 
   fill(255)
   rect(-10,-300-animation.wave()*50,20,20) // .wave is a cosine wave btw
