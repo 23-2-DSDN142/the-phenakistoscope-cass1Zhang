@@ -9,23 +9,25 @@ function setup_pScope(pScope){
 
   pScope.load_image("two_face","png");
   pScope.load_image_sequence("Smell_People" , "png", 9.)
+  
 }
 
 function setup_layers(pScope){
 
   new PLayer(null, 67,45,66);  //lets us draw the whole circle background, ignoring the boundaries
 
-  var layer1 =new PLayer(faces);
-  layer1.mode(SWIRL(7));
-  layer1.set_boundary(200,1000);
-
   var layer2 =new PLayer(squares);
   layer2.mode(RING);
   layer2.set_boundary(0,400);
 
-  var insideBackground = new PLayer(insideBlue);
-  insideBackground.mode(RING);
-  insideBackground.set_boundary(0,400);
+  var layer1 =new PLayer(faces);
+  layer1.mode(SWIRL(8));
+  layer1.set_boundary(200,1000);
+
+
+  //var insideBackground = new PLayer(insideBlue);
+  //insideBackground.mode(RING);
+  //insideBackground.set_boundary(0,400);
 
   var outerRing = new PLayer(outsideRing);
   outerRing.mode(RING);
@@ -40,20 +42,23 @@ function setup_layers(pScope){
   CenterImage.mode( RING );
   CenterImage.set_boundary( 0, 400 );
 
-  
+ 
   
 
 }
+
+
+
 
 function two_face(x, y, animation, pScope){
   pScope.draw_image("two_face",x,y);
 
 }
 
-function insideBlue(x, y, animation, pScope){
-  pScope.fill_background(196,254,253);
+//function insideBlue(x, y, animation, pScope){
+  //pScope.fill_background(196,254,253);
 
-}
+//}
 
 function outsideRing(x, y, animation, pScope){
   pScope.fill_background(215);
@@ -92,7 +97,7 @@ function squares(x, y, animation, pScope){
   let backgroundArcStart = 270 - angleOffset;
   let backgroundArcEnd = 270 + angleOffset;
 
-  fill(66, 135, 245)
+  fill(10)
   arc(x,y,800,800,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
 
   fill(255)
@@ -100,3 +105,4 @@ function squares(x, y, animation, pScope){
 
 
 }
+
