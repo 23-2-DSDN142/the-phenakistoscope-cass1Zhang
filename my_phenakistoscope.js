@@ -31,7 +31,7 @@ function setup_layers(pScope){
 
   var outerRing = new PLayer(outsideRing);
   outerRing.mode(RING);
-  outerRing.set_boundary(980,1000);
+  outerRing.set_boundary(975,1000);
 
 
   var smellSequence = new PLayer(smell);
@@ -61,7 +61,7 @@ function two_face(x, y, animation, pScope){
 //}
 
 function outsideRing(x, y, animation, pScope){
-  pScope.fill_background(215);
+  pScope.fill_background(247, 152, 17);
 
 }
 
