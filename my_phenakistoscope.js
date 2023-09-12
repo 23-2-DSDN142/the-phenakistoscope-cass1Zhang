@@ -14,7 +14,7 @@ function setup_pScope(pScope){
 
 function setup_layers(pScope){
 
-  new PLayer(null, 67,45,66);  //lets us draw the whole circle background, ignoring the boundaries
+  new PLayer(null, 163, 201, 201);  //lets us draw the whole circle background, ignoring the boundaries
 
   var layer2 =new PLayer(squares);
   layer2.mode(RING);
@@ -61,7 +61,7 @@ function two_face(x, y, animation, pScope){
 //}
 
 function outsideRing(x, y, animation, pScope){
-  pScope.fill_background(247, 152, 17);
+  pScope.fill_background(201, 255, 251);
 
 }
 
