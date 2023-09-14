@@ -9,7 +9,6 @@ function setup_pScope(pScope){
 
   pScope.load_image("two_face","png");
   pScope.load_image_sequence("Smell_People" , "png", 9.)
-  
 }
 
 function setup_layers(pScope){
@@ -25,14 +24,9 @@ function setup_layers(pScope){
   layer1.set_boundary(200,1000);
 
 
-  //var insideBackground = new PLayer(insideBlue);
-  //insideBackground.mode(RING);
-  //insideBackground.set_boundary(0,400);
-
   var outerRing = new PLayer(outsideRing);
   outerRing.mode(RING);
   outerRing.set_boundary(975,1000);
-
 
   var smellSequence = new PLayer(smell);
   smellSequence.mode(RING );
@@ -42,30 +36,19 @@ function setup_layers(pScope){
   CenterImage.mode( RING );
   CenterImage.set_boundary( 0, 400 );
 
- 
-  
-
 }
-
-
-
 
 function two_face(x, y, animation, pScope){
   pScope.draw_image("two_face",x,y);
 
 }
 
-//function insideBlue(x, y, animation, pScope){
-  //pScope.fill_background(196,254,253);
 
-//}
 
 function outsideRing(x, y, animation, pScope){
   pScope.fill_background(201, 255, 251);
 
 }
-
-
 
 function smell(x, y, animation, pScope){
   translate(x,y-560)
@@ -73,9 +56,6 @@ function smell(x, y, animation, pScope){
   pScope.draw_image_from_sequence("Smell_People", 0, 0, animation.frame);  
 
 }
-
-
-
 
 function faces(x, y, animation, pScope){
   
@@ -88,21 +68,31 @@ function faces(x, y, animation, pScope){
   arc(0,10,20,10,0,180); // draw mouth
 }
 
-
 function squares(x, y, animation, pScope){
 
 
   // this is how you set up a background for a specific layer
-  let angleOffset = (360 / SLICE_COUNT) / 2
+  let angleOffset = (360 / SLICE_COUNT) / 5
   let backgroundArcStart = 270 - angleOffset;
   let backgroundArcEnd = 270 + angleOffset;
 
-  fill(10)
+  fill(201, 255, 200)
   arc(x,y,800,800,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
 
-  fill(255)
+  fill(163, 201, 100)
   rect(-10,-300-animation.wave()*50,20,20) // .wave is a cosine wave btw
-
-
+  beginShape();
+  scale(1.5)
+  strokeWeight(2);
+  vertex(115, 18);
+  vertex(125, 50);
+  vertex(180, 60);
+  vertex(135, 80);
+  vertex(140, 120);
+  vertex(90, 90);
+  vertex(40, 110);
+  vertex(60, 75);
+  vertex(20, 50);
+  vertex(80, 45);
+  endShape(CLOSE);
 }
-
